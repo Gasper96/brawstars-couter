@@ -26,12 +26,12 @@
         </select>
             </br>
         <select name = "mapa">
-            <?php foreach ("$".$mododejogo as $maps): ?>
-                <option nome = <?=$maps?>> <?=$maps?>></option>
+            <?php foreach ($$mododejogo as $maps): ?>
+                <option nome = <?=$maps?>> <?=$maps?></option>
             <?php endforeach; ?>
         </select>
         
-       <button> Finalizar. </button>
+       <button> selecionar. </button>
     </form>
     <form action = "index.php">
         <button>Sair</button>

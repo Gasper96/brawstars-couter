@@ -48,7 +48,7 @@ button {
             <div>
                 <form action="salao.php" method ="get">
                     <button>Caça Estrelas</button>
-                    <input type = "hidden" name = "mododejogo" value = "cacaestrelas">
+                    <input type = "hidden" name = "mododejogo" value = "cacaEstrelas">
 
                 </form>
             </div>
@@ -65,7 +65,7 @@ button {
             <div>
                 <form action="salao.php" method ="get">
                     <button>FUT BRAW</button>
-                    <input type = "hidden" name = "mododejogo" value = "futbraw">
+                    <input type = "hidden" name = "mododejogo" value = "futbrawl">
                 </form>
             </div>
 

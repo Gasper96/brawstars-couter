@@ -8,7 +8,28 @@
 <body>
     <h1>resultados</h1>
     <?php 
-    $brawls = $_POST["char"];
-    echo $brawls;?>
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(!empty($_POST["char"] && $_POST["mapa"])){
+            $selectedbrawler = $_POST["char"];
+            $selectedmapa = $_POST["mapa"];
+
+            echo "você está jogando no mapa $selectedmapa com o brawler $selectedbrawler.";
+        };
+    };
+        echo "</br>";
+        echo "informe as estatísticas do jogo:"
+    ?>
+    <form>
+        <select name="result">
+            <option value="win">ganhei</option>
+            <option value="defeat">perdi</option>
+        </select>
+        <input type="number" name="kd" placeholder="informe seu KD">
+        <button>Registrar</button>
+    </form>
+    <form action="index.php">
+    <button>Cancelar</button>
+    </form>
 </body>
 </html>
