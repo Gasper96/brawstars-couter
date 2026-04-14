@@ -1,6 +1,6 @@
 <?php
 $brawlers =
-["",
+[
 "doug",
 "shelly",
 "poco",

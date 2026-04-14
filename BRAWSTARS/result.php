@@ -10,13 +10,16 @@
     <?php 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
-        if(!empty($_POST["brawler"] && $_POST["mapa"])){
+        if(!empty(trim($_POST["brawler"]) && $_POST["mapa"])){
             $selectedbrawler = $_POST["brawler"];
             $selectedmapa = $_POST["mapa"];
             $mododejogo = $_POST['mododejogo'];
 
             echo "você está jogando no mapa $selectedmapa com o brawler $selectedbrawler.";
-        };
+        }else{
+            header("location:index.php");
+            exit;
+        }
     };
         echo "</br>";
         echo "informe as estatísticas do jogo:"
