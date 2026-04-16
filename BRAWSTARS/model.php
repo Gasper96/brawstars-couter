@@ -1,4 +1,5 @@
 <?php
+//BRAWLERS JOGÁVEIS
 $brawlers =
 [
 "doug",
@@ -36,6 +37,7 @@ $brawlers =
 "darril"
 ];
 
+//MAPAS ATIVOS RANQUEADA
 //PIQUE GEMAS:
 $piqueGemas = [
     "arco duplo",

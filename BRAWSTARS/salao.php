@@ -25,6 +25,7 @@
 
 <?php
 require_once("model.php");
+require_once("pdo.php");
 
 if (!empty($_GET['mododejogo']) && !empty($_GET['mapa'])) {
     $mododejogo = $_GET['mododejogo'];
@@ -69,14 +70,14 @@ if (!empty($_GET['mododejogo']) && !empty($_GET['mapa'])) {
             <tr>
                 <th>Brawler</th>
                 <th>% de vitórias</th>
-                <th>Média de KD</th>
+                <th>KD TOTAL</th>
             </tr>
 
             <!-- Exemplo estático (depois você liga no BD) -->
             <tr>
                 <td></td>
                 <td></td>
-                <td>    </td>
+                <td> </td>
             </tr>
         </table>
     </div>

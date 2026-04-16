@@ -11,31 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         //PERSISTêNCIA NO BANCO DE DADOS:
         if($resultado == "win"){
-            $sql = "INSERT INTO partida (modoJogo,mapaJogo,brawler,resultado,desempenho) VALUES(:modoJogo,:mapaJogo,:brawler,:resultado,:desempenho)";
-            $stmt = $pdo->prepare($sql);
-
-            $stmt->execute([
-                ":modoJogo"=> $mododejogo,
-                ":mapaJogo"=> $selectedmapa,
-                ":brawler"=> $selectedbrawler,
-                ":resultado"=> true,
-                ":desempenho"=> $desempenho
-                ]);
-            echo "dados salvos.";
+            $resultado = true;
+            salvar($pdo,$mododejogo,$selectedmapa,$selectedbrawler,$resultado,$desempenho);
 
         }elseif($resultado == "defeat"){
-            $sql = "INSERT INTO partida (modoJogo,mapaJogo,brawler,resultado,desempenho) VALUES(:modoJogo,:mapaJogo,:brawler,:resultado,:desempenho)";
-            $stmt = $pdo->prepare($sql);
-
-            $stmt->execute([
-                ":modoJogo"=> $mododejogo,
-                ":mapaJogo"=> $selectedmapa,
-                ":brawler"=> $selectedbrawler,
-                ":resultado"=> false,
-                ":desempenho"=> $desempenho
-                ]);
-            echo "dados salvos.";
-        };
+            $resultado = false;
+            salvar($pdo,$mododejogo,$selectedmapa,$selectedbrawler,$resultado,$desempenho);
  
         }else {
             header("location:index.php");
@@ -44,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 }else{
     header("location:index.php");
     exit;
+}
 };
 ?>
 <html>
