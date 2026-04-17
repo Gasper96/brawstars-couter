@@ -28,5 +28,31 @@ function salvar($pdo,$mododejogo,$selectedmapa,$selectedbrawler,$resultado, $des
                 echo "dados salvos.";
 };
 
+/**
+ * retorna a quantidade total de partidas salvas
+ * @param object $pdo parâmetro que armazena a conexão com o db
+ * @return array retorna o indice do array asssociativo que contém o valor de itens totais.
+*/
+function partidastotais($pdo){
+    $sql = "SELECT COUNT(*) AS total_linhas FROM partida";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $resultado['total_linhas'];
 
+}; 
+
+/**
+ * 
+ */
+function partidasbrawler($pdo){
+     $sql = "SELECT COUNT(*) AS total_linhas FROM partida WHERE brawler = 'corvo'";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $resultado['total_linhas'];
+};
+
+$teste = partidasbrawler($pdo);
+echo "$teste";
 ?>

@@ -77,7 +77,7 @@ if (!empty($_GET['mododejogo']) && !empty($_GET['mapa'])) {
             <tr>
                 <td></td>
                 <td></td>
-                <td> </td>
+                <td></td>
             </tr>
         </table>
     </div>
